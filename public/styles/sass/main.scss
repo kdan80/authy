@@ -1,0 +1,241 @@
+@import "config";
+@import "reset";
+
+body {
+    background-color: #fbfbfb;
+}
+
+.root-container {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.col {
+    width: 50%;
+}
+
+.align-items-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 28rem;
+}
+
+.form {
+    padding: 1.6rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    transition: 800ms ease-in-out;
+    transition-delay: 400ms;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+    padding: .8rem;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .4rem;
+    border: 2px solid $bg_lightGray;
+    background-color: $bg_lightGray;
+}
+
+.input-group:focus-within,
+.input-group:active {
+    border-color: $bg_blue;
+    background-color: #f1f8fe;
+}
+
+.input-group:focus-within i,
+.input-group:active i {
+    color: $bg_darkBlue;
+}
+
+.input-group:focus-within input,
+.input-group:active input {
+    color: $bg_darkBlue;
+}
+
+.input-group:focus-within input::-moz-placeholder,
+.input-group:active input::-moz-placeholder {
+    color: $bg_darkBlue;
+}
+  
+.input-group:focus-within input:-ms-input-placeholder,
+.input-group:active input:-ms-input-placeholder {
+    color: $bg_darkBlue;
+}
+  
+.input-group:focus-within input::placeholder,
+.input-group:active input::placeholder {
+    color: $bg_darkBlue;
+}
+
+.input-group i {
+    font-size: 1.4rem;
+    color: $fg_gray;
+}
+
+.input-group input {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.form button {
+    @include button;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: .6rem 0;
+    border-radius: .4rem;
+}
+
+.dashboard {
+    @include rootElement;
+    padding: 1rem;
+
+    .action-btns-container {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .logoutBtn {
+        @include button;
+        margin-top: .5rem;
+        padding: 0 .5rem;
+        border-radius: .25rem;
+    }
+
+    .delete-user-btn {
+        @include button;
+        margin-top: .5rem;
+        padding: 0 .5rem;
+        border-radius: .25rem;
+        border-color: #ff1234;
+        background-color: white;
+        color: #ff1234;
+    }
+}
+
+.form p {
+    margin: 1rem 0;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.redirect-link {
+    cursor: pointer;
+}
+
+.root-container.login .form.login,
+.root-container.login .social-list.login,
+.root-container.login .social-list.login>div,
+.root-container.register .form.register,
+.root-container.register .social-list.register,
+.root-container.register .social-list.register>div {
+    transform: scale(1);
+}
+
+.content-row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 6;
+    width: 100%;
+}
+
+.text {
+    margin: 4rem;
+    color: #fff;
+}
+
+.text h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 2rem 0;
+    transition: 800ms ease-in-out;
+}
+
+.text p {
+    font-weight: 600;
+    transition: 800ms ease-in-out;
+    transition-delay: 200ms;
+}
+
+.img img {
+    height: 25vw;
+    transition: .8s ease-in-out;
+    transition-delay: 400ms;
+}
+
+.text.login h2,
+.text.login p,
+.img.login img {
+    transform: translateX(-250%);
+}
+
+.text.register h2,
+.text.register p,
+.img.register img {
+    transform: translateX(250%);
+}
+
+.root-container.login .text.login h2,
+.root-container.login .text.login p,
+.root-container.login .img.login img,
+.root-container.register .text.register h2,
+.root-container.register .text.register p,
+.root-container.register .img.register img {
+    transform: translateX(0);
+}
+
+.root-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300vw;
+    transform: translate(35%, 0);
+    background-image: linear-gradient(-45deg, $bg_lightBlue 0%, $bg_blue 100%);
+    transition: 800ms ease-in-out;
+    z-index: 6;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-bottom-right-radius: max(50vw, 50vh);
+    border-top-left-radius: max(50vw, 50vh);
+}
+
+.root-container.login::before {
+    transform: translate(0, 0);
+    right: 50%;
+}
+
+.root-container.register::before {
+    transform: translate(100%, 0);
+    right: 50%;
+}
+
+@import "responsive";

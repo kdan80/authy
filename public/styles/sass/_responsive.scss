@@ -1,0 +1,116 @@
+@include media-sm {
+
+    .root-container::before,
+    .root-container.login::before,
+    .root-container.register::before {
+        height: 100%;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 0;
+        z-index: 0;
+        transform: none;
+        right: 0;
+    }
+
+    .root-container.login .col.login,
+    .root-container.register .col.register {
+        transform: translateY(0);
+    }
+
+    .content-row {
+        align-items: flex-start !important;
+        
+    }
+
+    .reverse {
+        flex-direction: column-reverse;
+    }
+
+    .content-row .col {
+        transform: translateY(0);
+        background-color: unset;
+    }
+
+    .col {
+        width: 100%;
+        position: absolute;
+        z-index: 20;
+        padding: 0;
+        border-radius: 1.5rem 1.5rem 0 0;
+        background-color: #fff;
+        transform: translateY(100%);
+        transition: 800ms ease-in-out;
+    }
+
+    .flex-col {
+        margin-top: 2rem;
+        z-index: 10;
+    }
+
+    .row {
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    .form {
+        border-radius: 1.5rem 1.5rem 0 0;
+        box-shadow: none;
+        margin: 0;
+        transition-delay: 0;
+        transition: none;
+        background-color: transparent;
+    }
+
+    .img img {
+        height: 50vw;
+    }
+
+    .text.login h2 {
+        transform: translateX(250%);
+    }
+
+    .text.register h2 {
+        transform: translateX(-250%);
+    }
+
+    .text p, 
+    .img img {
+        transition-delay: 0;
+    }
+
+    .root-container.login {
+        .form.login {
+            transform: scale(0);
+                        animation: scaleInKf .4s ease-in-out .4s 1 normal forwards;
+                        @keyframes scaleInKf {
+                            100% {
+                                transform: scale(100%);
+                            }  
+                        }
+        }
+    }
+
+    .root-container.register {
+        .form.register {
+            transform: scale(0);
+                        animation: scaleInKf .4s ease-in-out .4s 1 normal forwards;
+                        @keyframes scaleInKf {
+                            100% {
+                                transform: scale(100%);
+                            }  
+                        }
+        }
+    }
+
+    .text {
+        margin: 0;
+    }
+
+    .text p {
+        display: none;
+    }
+
+    .text h2 {
+        margin: .5rem;
+        font-size: 2rem;
+    }
+}

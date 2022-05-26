@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    font-family: "Poppins","Roboto","Arial","sans-serif";
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+
+body, html, .root-container {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+input, button {
+    font-size: 1rem;
+}
+
+input {
+    min-width: 0;
+    background-color: transparent;
+
+    &::placeholder {
+        color: $fg_gray;
+        opacity: 1;
+    }
+}

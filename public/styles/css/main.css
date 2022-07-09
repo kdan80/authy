@@ -169,6 +169,7 @@ body {
 .dashboard .action-btns-container {
   display: flex;
   gap: 1rem;
+  margin-bottom: .5rem;
 }
 .dashboard .logoutBtn {
   cursor: pointer;

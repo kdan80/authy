@@ -22,9 +22,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    dateCreated: {
+    createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        expires: 300
     }
 });
 

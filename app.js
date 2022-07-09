@@ -6,7 +6,7 @@ const cors = require("cors");
 // Session store
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-const sessionStore = MongoStore.create({ mongoUrl: process.env.AUTHY_DB});
+const sessionStore = MongoStore.create({ mongoUrl: process.env.MONGODB_URI});
 
 // App settings
 const app = express();

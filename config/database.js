@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-const {AUTHY_DB} = process.env;
+const {MONGODB_URI} = process.env;
 
 exports.connect = () => {
-    mongoose.connect(AUTHY_DB, {
+    mongoose.connect(MONGODB_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })

@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-const {JWT_AUTH_DB} = process.env;
+const {AUTHY_DB} = process.env;
 
 exports.connect = () => {
-    mongoose.connect(JWT_AUTH_DB, {
+    mongoose.connect(AUTHY_DB, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })

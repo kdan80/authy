@@ -23,8 +23,5 @@
     "express-session": "^1.17.2",
     "joi": "^17.6.0",
     "mongoose": "^6.1.10"
-  },
-  "devDependencies": {
-    "dotenv": "^16.0.1"
   }
 }

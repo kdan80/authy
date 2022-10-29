@@ -6,6 +6,8 @@ const root_container = document.querySelector(".root-container");
 const fa_eye_icons = document.querySelectorAll(".fa-eye-slash");
 const input_groups = document.querySelectorAll(".input-group");
 const redirect_links = document.querySelectorAll(".redirect-link");
+const loginForm = document.querySelector("#loginForm");
+const registerForm = document.querySelector("#registerForm");
 
 //-----------//
 // Functions //
@@ -61,3 +63,13 @@ fa_eye_icons.forEach(icon => {
 		togglePasswordVisibility(input);
     });
 });
+
+registerForm.addEventListener("submit", (e) => {
+	e.preventDefault();
+	alert("This form is for demonstration purposes only.")
+})
+
+loginForm.addEventListener("submit", (e) => {
+	e.preventDefault();
+	alert("This form is for demonstration purposes only.")
+})
